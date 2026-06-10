@@ -212,25 +212,7 @@ grid-template-columns:1fr;
 }
 
 .card{
-background:var(--card);
-padding:22px;
-border-radius:24px;
-transition:.3s;
-position:relative;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:10px;
-}
-
-.favicon{
-    width:48px;
-    height:48px;
-    display:block;
-    margin:0 auto 15px;
-    border-radius:12px;
+    background:var(--card);
 }
 
 .form input,
@@ -392,26 +374,17 @@ document.createElement("div");
 
 section.className="category";
 
-section.innerHTML =
+section.innerHTML=
 `
 <h2 class="category-title">${cat}</h2>
-
 <div class="grid">
-
 ${filtered.map((item,index)=>`
-
 <div class="card">
 
 <button class="delete"
 onclick="removeLink(${links.indexOf(item)})">
 ✕
 </button>
-
-<img
-class="favicon"
-src="https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128"
-alt="${item.name}"
->
 
 <h3>${item.name}</h3>
 
@@ -421,11 +394,10 @@ Open Website
 </a>
 
 </div>
-
 `).join("")}
-
 </div>
 `;
+
 content.appendChild(section);
 
 });
