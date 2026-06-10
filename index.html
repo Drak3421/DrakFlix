@@ -177,46 +177,6 @@ grid-template-columns:1fr;
 
 }
 
-.dark{
-    --bg:#0f0f10;
-    --card:#1c1c1e;
-    --text:#ffffff;
-    --accent:#0A84FF;
-    --border:#333;
-}
-
-#themeBtn{
-    margin-top:20px;
-    border:none;
-    padding:12px 20px;
-    border-radius:12px;
-    background:var(--accent);
-    color:white;
-    cursor:pointer;
-    font-weight:600;
-}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-}
-
-.panel,
-.card{
-    background:var(--card);
-}
-
-.search input,
-.form input,
-.form select{
-    background:var(--card);
-    color:var(--text);
-}
-
-.subtitle{
-    color:inherit;
-}
-
 </style>
 
 </head>
@@ -228,7 +188,6 @@ body{
 <header>
 <h1>DARKFLIX</h1>
 <p class="subtitle">Movies • Anime • Gaming • Tools</p>
-<button id="themeBtn">🌙 Dark Mode</button>
 </header>
 
 <div class="search">
@@ -246,7 +205,7 @@ body{
 <input id="url" placeholder="https://example.com">
 
 <select id="category">
-<option>Movies&Webseries</option>
+<option>Movies</option>
 <option>Anime</option>
 <option>Gaming</option>
 <option>Tools</option>
@@ -268,48 +227,6 @@ body{
 </div>
 
 <script>
-
-// DARK MODE
-
-const themeBtn =
-document.getElementById("themeBtn");
-
-if(localStorage.getItem("theme")==="dark"){
-
-    document.body.classList.add("dark");
-
-    themeBtn.textContent =
-    "☀️ Light Mode";
-
-}
-
-themeBtn.addEventListener("click",()=>{
-
-    document.body.classList.toggle("dark");
-
-    if(document.body.classList.contains("dark")){
-
-        themeBtn.textContent =
-        "☀️ Light Mode";
-
-        localStorage.setItem(
-            "theme",
-            "dark"
-        );
-
-    }else{
-
-        themeBtn.textContent =
-        "🌙 Dark Mode";
-
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
-
-    }
-
-});
 
 let links = JSON.parse(
 localStorage.getItem("darkflix_links")
@@ -349,7 +266,7 @@ document.getElementById("search")
 .toLowerCase();
 
 const categories =
-["Movies&Webseries","Anime","Gaming","Tools","Social"];
+["Movies","Anime","Gaming","Tools","Social"];
 
 categories.forEach(cat=>{
 
