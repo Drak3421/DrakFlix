@@ -267,13 +267,20 @@ body{
 
 </div>
 
+<script>
+
+// DARK MODE
+
 const themeBtn =
 document.getElementById("themeBtn");
 
-// Load saved theme
-if(localStorage.getItem("theme") === "dark"){
+if(localStorage.getItem("theme")==="dark"){
+
     document.body.classList.add("dark");
-    themeBtn.textContent = "☀️ Light Mode";
+
+    themeBtn.textContent =
+    "☀️ Light Mode";
+
 }
 
 themeBtn.addEventListener("click",()=>{
@@ -299,11 +306,10 @@ themeBtn.addEventListener("click",()=>{
             "theme",
             "light"
         );
+
     }
 
 });
-
-<script>
 
 let links = JSON.parse(
 localStorage.getItem("darkflix_links")
