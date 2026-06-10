@@ -392,11 +392,14 @@ document.createElement("div");
 
 section.className="category";
 
-section.innerHTML=
+section.innerHTML =
 `
 <h2 class="category-title">${cat}</h2>
+
 <div class="grid">
+
 ${filtered.map((item,index)=>`
+
 <div class="card">
 
 <button class="delete"
@@ -406,7 +409,7 @@ onclick="removeLink(${links.indexOf(item)})">
 
 <img
 class="favicon"
-src="https://www.google.com/s2/favicons?domain=${item.url}&sz=128"
+src="https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=128"
 alt="${item.name}"
 >
 
@@ -418,8 +421,11 @@ Open Website
 </a>
 
 </div>
-`;
 
+`).join("")}
+
+</div>
+`;
 content.appendChild(section);
 
 });
